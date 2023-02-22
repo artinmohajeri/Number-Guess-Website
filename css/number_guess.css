@@ -1,0 +1,165 @@
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+.body {
+
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+#container {
+    margin: 0 auto;
+    width: 700px;
+    height: 400px;
+    border: 2px solid black;
+    border-radius: 4px;
+    box-shadow: 0px 0px 20px 3px rgb(122 122 122);        }
+
+.cube {
+    width: 450px;
+    height: 450px;
+    position: absolute;
+    background-color: var(--color);
+    animation-duration: 7s;
+    animation-iteration-count: infinite;
+    animation-name: color-cube;
+}
+
+.red-cube {
+    top: 0;
+}
+
+.green-cube {
+    bottom: 0;
+    left: calc(50% - 125px);
+}
+
+.blue-cube {
+    top: 0;
+    right: 0;
+}
+
+@keyframes color-cube {
+    0% {
+        filter: hue-rotate(0deg) blur(160px);
+    }
+
+    100% {
+        filter: hue-rotate(360deg) blur(160px);
+    }
+}
+
+h2 {
+    text-align: center;
+    font-size: 28px;
+}
+
+h4 {
+    text-align: center;
+}
+
+input {
+    width: 200px;
+    height: 40px;
+    text-align: center;
+    font-size: 30px;
+    margin-left: calc(50% - 100px);
+    display: block;
+}
+
+input:focus {
+    outline: none;
+}
+
+button {
+    width: 200px;
+    height: 30px;
+    margin-left: calc(50% - 100px);
+    background-color: rgb(255, 255, 255);
+    animation-name: color-cube;
+    transition: 0.3s;
+    font-size: 17px;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.btn {
+    width: 200px;
+    height: 30px;
+    margin: 0px auto;
+    margin-top: 20px;
+}
+
+.btn::before,
+.btn::after {
+    transition: 0.3s;
+    content: "";
+    display: block;
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    height: 3px;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: all .4s ease-in-out;
+    width: 150px;
+}
+
+.btn::before {
+    transform: translateX(-150px) translateY(15px);
+    background: linear-gradient(-90deg, black, rgba(255, 255, 255, 0));
+}
+
+.btn::after {
+    transform: translateX(200px) translateY(-15px);
+    background: linear-gradient(90deg, black, rgba(255, 255, 255, 0));
+}
+
+.btn:hover::before {
+    cursor: pointer;
+    width: 0;
+    margin-left: 150px;
+}
+
+.btn:hover::after {
+    cursor: pointer;
+    width: 0;
+}
+
+.btn:hover button {
+    color: white;
+    box-shadow: inset -100px 0 0 0 black, inset 100px 0 0 0 black;
+}
+
+h3 {
+    text-align: center;
+    font-size: 30px;
+    margin-top: 30px;
+    color: black;
+}
+
+#situation {
+    margin: 0 auto;
+    width: 150px;
+    height: 50px;
+    /* border: 2px solid black; */
+    position: relative;
+    /* margin-top: -10px; */
+    text-align: center;
+    line-height: 50px;
+    color: rgb(0, 140, 0);
+    font-size: 22px;
+    font-weight: 700;
+}
